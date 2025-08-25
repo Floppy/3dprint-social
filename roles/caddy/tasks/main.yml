@@ -36,4 +36,5 @@
         target: /data
         source: "/home/caddy/data"
     networks:
-      - name: "manyfold"
+      - name: manyfold
+      - name: fediscoverer
