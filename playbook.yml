@@ -41,14 +41,6 @@
   roles:
     - role: caddy
 
-- name: Set up Manyfold
-  hosts: [app]
-  remote_user: ansible
-  port: "{{security_ssh_port}}"
-  become: yes
-  roles:
-    - role: manyfold
-
 - name: Set up database server
   hosts: [db]
   remote_user: ansible
@@ -64,3 +56,12 @@
   become: yes
   roles:
     - valkey
+
+- name: Set up app servers
+  hosts: [app]
+  remote_user: ansible
+  port: "{{security_ssh_port}}"
+  become: yes
+  roles:
+    - role: manyfold
+    - role: fediscoverer

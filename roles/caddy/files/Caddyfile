@@ -4,3 +4,9 @@
 		health_uri /health
 	}
 }
+
+search.3dprint.social {
+	reverse_proxy {
+		to fediscoverer:3000
+	}
+}
